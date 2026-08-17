@@ -81,19 +81,19 @@ function Index() {
           {/* Source links */}
           <section className="mb-12 md:mb-16">
             <div className="rounded-lg border border-border bg-card p-6 md:p-8">
-              <h2 className="mb-6 text-sm font-bold uppercase tracking-wide text-muted-foreground">
+              <h2 className="mb-4 border-b border-[#27323a] pb-4 text-sm font-bold uppercase tracking-wide text-muted-foreground">
                 Official sources
               </h2>
-              <ul className="space-y-4">
+              <ul className="space-y-4 pt-2">
                 <li>
                   <a
                     href={SNAPSHOT_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex flex-col gap-1 text-accent transition-colors hover:text-primary-foreground sm:flex-row sm:items-baseline sm:gap-3"
+                    className="group inline-flex flex-col gap-1 text-[var(--accent-text)] transition-colors hover:text-[var(--primary)] sm:flex-row sm:items-baseline sm:gap-3"
                   >
                     <span className="text-base font-semibold">Ratified checklist on Snapshot</span>
-                    <span className="font-mono text-sm text-muted-foreground group-hover:text-accent">
+                    <span className="font-mono text-sm text-muted-foreground group-hover:text-[var(--accent-text)]">
                       rbnt.eth proposal
                     </span>
                   </a>
@@ -103,10 +103,10 @@ function Index() {
                     href={CONSTITUTION_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex flex-col gap-1 text-accent transition-colors hover:text-primary-foreground sm:flex-row sm:items-baseline sm:gap-3"
+                    className="group inline-flex flex-col gap-1 text-[var(--accent-text)] transition-colors hover:text-[var(--primary)] sm:flex-row sm:items-baseline sm:gap-3"
                   >
                     <span className="text-base font-semibold">Constitution v1.2</span>
-                    <span className="font-mono text-sm text-muted-foreground group-hover:text-accent">
+                    <span className="font-mono text-sm text-muted-foreground group-hover:text-[var(--accent-text)]">
                       PDF
                     </span>
                   </a>
@@ -116,10 +116,10 @@ function Index() {
                     href={CODE_OF_CONDUCT_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex flex-col gap-1 text-accent transition-colors hover:text-primary-foreground sm:flex-row sm:items-baseline sm:gap-3"
+                    className="group inline-flex flex-col gap-1 text-[var(--accent-text)] transition-colors hover:text-[var(--primary)] sm:flex-row sm:items-baseline sm:gap-3"
                   >
                     <span className="text-base font-semibold">Code of Conduct v1.0</span>
-                    <span className="font-mono text-sm text-muted-foreground group-hover:text-accent">
+                    <span className="font-mono text-sm text-muted-foreground group-hover:text-[var(--accent-text)]">
                       PDF
                     </span>
                   </a>
