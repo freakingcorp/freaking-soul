@@ -44,6 +44,86 @@ const CODE_OF_CONDUCT_URL =
 
 const GITHUB_URL = "https://github.com/hildecorp/redbellydaotask25";
 
+const DISCREPANCIES: { label: string; body: string }[] = [
+  {
+    label: "Three working groups vs. five pods",
+    body: "The ratified checklist text names three working groups: Community, Marketing, Developers/Builders. Constitution Section 3 ratifies five pods, adding Researcher and Partnerships. This framework follows the Constitution as the current, in-force structure. A Researcher or Partnerships submission is not flagged for its pod choice.",
+  },
+  {
+    label: "Criterion 11 has no ratified flag condition",
+    body: "Every other criterion in the ratified checklist pairs a pass condition with an explicit flag rule. Community Involvement does not. Any flag raised here is labelled informational only and never marks a proposal as failing pre-screening on its own.",
+  },
+];
+
+const CRITERIA: { number: string; name: string; anchor: string; flag: string }[] = [
+  {
+    number: "01",
+    name: "Budget Alignment & Limits",
+    anchor: "Section 6.2",
+    flag: "Flags if the USDT or RBNT field is empty while the proposal clearly needs funding, or the justification is under roughly 20 words.",
+  },
+  {
+    number: "02",
+    name: "Payment & Payout Structure",
+    anchor: "Section 7",
+    flag: "Flags if Upfront is selected with no justification, or the milestone list is empty.",
+  },
+  {
+    number: "03",
+    name: "Strategic Fit",
+    anchor: "Section 3",
+    flag: "Flags if the alignment text is empty or under roughly 15 words. Never flags based on which of the five pods is chosen.",
+  },
+  {
+    number: "04",
+    name: "Feasibility & Timeline",
+    anchor: "No Constitution anchor",
+    flag: "Flags if the timeline is empty or the resourcing note is empty.",
+  },
+  {
+    number: "05",
+    name: "Oversight & Accountability",
+    anchor: "Section 6.1",
+    flag: "Flags if the reviewer field or the monthly update plan is empty.",
+  },
+  {
+    number: "06",
+    name: "Impact & Measurement",
+    anchor: "No Constitution anchor",
+    flag: "Flags if KPIs are empty, or only short-term value is described with nothing under long-term or community value.",
+  },
+  {
+    number: "07",
+    name: "Risk & Mitigation",
+    anchor: "No Constitution anchor",
+    flag: "Flags if the risk list is empty or any risk has no paired mitigation.",
+  },
+  {
+    number: "08",
+    name: "Co-Funding & Leverage",
+    anchor: "No Constitution anchor",
+    flag: "Flags, informationally and non-blocking, if left empty.",
+  },
+  {
+    number: "09",
+    name: "Contribution Equity",
+    anchor: "Section 5",
+    flag: "Flags if one contributor's share of payout is disproportionate, or a listed contributor already holds another paid DAO role with no justification given.",
+  },
+  {
+    number: "10",
+    name: "Compliance & Ethical Standards",
+    anchor: "Code of Conduct v1.0",
+    flag: "Flags if the disclosure field is empty or the Code of Conduct acknowledgement is unchecked.",
+  },
+  {
+    number: "11",
+    name: "Community Involvement",
+    anchor: "Section 8",
+    flag: "Flags only if the evidence field is completely empty. The ratified checklist gives this criterion no flag condition at all, so this flag is always informational, never a failure.",
+  },
+];
+
 function Index() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -156,6 +236,93 @@ function Index() {
               </span>
             </div>
           </section>
+
+          {/* Section 01 */}
+          <section className="mt-16 md:mt-20">
+            <div className="rounded-lg border border-border bg-card p-6 md:p-8">
+              <p className="mb-2 text-sm font-bold uppercase tracking-wide text-muted-foreground">
+                Section 01
+              </p>
+              <h2 className="mb-5 text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+                How Pre-Screening Works
+              </h2>
+              <div className="max-w-[75ch] space-y-4 text-base text-foreground-secondary">
+                <p>
+                  This framework automates the DAO's already-ratified 11-criterion Proposal Review
+                  Checklist (Snapshot proposal #7, adopted 6 October 2025). A proposal is checked
+                  against all 11 criteria. Each one returns pass or flag, with the specific reason
+                  and the Constitution or Code of Conduct section it cites.
+                </p>
+                <p>
+                  Pre-screening is not a decision. It runs before Guild and High Council review, not
+                  instead of it. A flagged criterion means a reviewer should look closer, not that
+                  the proposal is rejected.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 02 */}
+          <section className="mt-16 md:mt-20">
+            <p className="mb-2 text-sm font-bold uppercase tracking-wide text-muted-foreground">
+              Section 02
+            </p>
+            <h2 className="mb-6 text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+              Known Discrepancies
+            </h2>
+            <div className="space-y-4">
+              {DISCREPANCIES.map((d) => (
+                <div
+                  key={d.label}
+                  className="rounded-lg border border-[var(--primary)] bg-card p-5 md:p-6"
+                >
+                  <p className="mb-2 text-sm font-bold uppercase tracking-wide text-[var(--primary)]">
+                    {d.label}
+                  </p>
+                  <p className="max-w-[75ch] text-base text-foreground">{d.body}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Section 03 */}
+          <section className="mt-16 md:mt-20">
+            <p className="mb-2 text-sm font-bold uppercase tracking-wide text-muted-foreground">
+              Section 03
+            </p>
+            <h2 className="mb-2 text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+              The 11 Criteria
+            </h2>
+            <p className="mb-6 text-sm text-muted-foreground">
+              Showing all 11. Each card is what the pre-screening tool checks and cites.
+            </p>
+            <div className="space-y-4">
+              {CRITERIA.map((c) => (
+                <article
+                  key={c.number}
+                  className="rounded-lg border border-border bg-card"
+                >
+                  <div className="flex flex-col gap-2 border-b border-[#27323a] p-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                    <div className="flex items-baseline gap-3">
+                      <span className="font-mono text-sm text-muted-foreground">{c.number}</span>
+                      <h3 className="text-base font-semibold text-foreground">{c.name}</h3>
+                    </div>
+                    <span
+                      className={
+                        "font-mono text-xs " +
+                        (c.anchor === "No Constitution anchor"
+                          ? "text-muted-foreground"
+                          : "text-[var(--accent-text)]")
+                      }
+                    >
+                      {c.anchor}
+                    </span>
+                  </div>
+                  <p className="max-w-[75ch] p-5 text-base text-foreground-secondary">{c.flag}</p>
+                </article>
+              ))}
+            </div>
+          </section>
         </div>
       </main>
 
@@ -168,7 +335,7 @@ function Index() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Read full PDF report"
-              className="text-muted-foreground transition-colors hover:text-accent"
+              className="text-muted-foreground transition-colors hover:text-[var(--accent-text)]"
             >
               <PdfIcon />
             </a>
@@ -177,7 +344,7 @@ function Index() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Read full docs"
-              className="text-muted-foreground transition-colors hover:text-accent"
+              className="text-muted-foreground transition-colors hover:text-[var(--accent-text)]"
             >
               <DocsIcon />
             </a>
@@ -194,7 +361,7 @@ function Index() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="View source on GitHub"
-              className="text-muted-foreground transition-colors hover:text-accent"
+              className="text-muted-foreground transition-colors hover:text-[var(--accent-text)]"
             >
               <GitHubIcon />
             </a>
@@ -208,80 +375,39 @@ function Index() {
   );
 }
 
-function PdfIcon() {
+function MaskIcon({ src, label, className = "h-6 w-6" }: { src: string; label: string; className?: string }) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-      <polyline points="14 2 14 8 20 8" />
-      <path d="M10 13v-2h2" />
-      <path d="M10 17.5V15h1.5a1.5 1.5 0 0 1 0 3H10" />
-      <path d="M14 15h1.5a1.5 1.5 0 0 1 0 3H14v-3" />
-    </svg>
+    <span
+      role="img"
+      aria-label={label}
+      className={`inline-block bg-current ${className}`}
+      style={{
+        maskImage: `url(${src})`,
+        WebkitMaskImage: `url(${src})`,
+        maskRepeat: "no-repeat",
+        WebkitMaskRepeat: "no-repeat",
+        maskPosition: "center",
+        WebkitMaskPosition: "center",
+        maskSize: "contain",
+        WebkitMaskSize: "contain",
+      }}
+    />
   );
+}
+
+function PdfIcon() {
+  return <MaskIcon src="/filetype-pdf.svg" label="PDF" />;
 }
 
 function DocsIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-      <polyline points="14 2 14 8 20 8" />
-      <line x1="16" y1="13" x2="8" y2="13" />
-      <line x1="16" y1="17" x2="8" y2="17" />
-      <line x1="10" y1="9" x2="8" y2="9" />
-    </svg>
-  );
+  return <MaskIcon src="/docs-svgrepo-com.svg" label="Docs" />;
 }
 
 function DevToIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      <path d="M7.42 10.05c-.77-.02-1.13.4-1.13.89v3.86c0 .5.36.93 1.13.91.78-.02 1.13-.42 1.13-.91v-3.86c0-.49-.35-.91-1.13-.89z" />
-      <path d="M19.15 10.4c-.4-.15-.8-.05-1.05.25l-.1.13v4.45l.1.13c.25.3.65.4 1.05.25.42-.15.65-.5.65-.9v-2.41c0-.4-.23-.75-.65-.9z" />
-      <path d="M22 7.42v9.16c0 1.55-1.25 2.8-2.8 2.8H4.8C3.25 19.38 2 18.13 2 16.58V7.42c0-1.55 1.25-2.8 2.8-2.8h14.4c1.55 0 2.8 1.25 2.8 2.8zM4.8 5.62C3.26 5.62 2 6.88 2 8.42v7.16c0 1.54 1.26 2.8 2.8 2.8h14.4c1.54 0 2.8-1.26 2.8-2.8V8.42c0-1.54-1.26-2.8-2.8-2.8H4.8zm2.62 9.18c0 .9-.67 1.63-1.87 1.65H3.9a.4.4 0 0 1-.4-.4V8.95c0-.22.18-.4.4-.4h1.65c1.2.02 1.87.75 1.87 1.65v4.6zm6.13.4c0 .22-.18.4-.4.4h-1.68a.4.4 0 0 1-.4-.4V8.95c0-.22.18-.4.4-.4h1.68c.22 0 .4.18.4.4v6.65zm4.42-4.86c0 .22-.18.4-.4.4h-.95v1.47h.95c.22 0 .4.18.4.4v.74c0 .22-.18.4-.4.4h-.95v1.64h.95c.22 0 .4.18.4.4v.74c0 .22-.18.4-.4.4h-1.75a.4.4 0 0 1-.4-.4V8.95c0-.22.18-.4.4-.4h1.75c.22 0 .4.18.4.4v1.59z" />
-    </svg>
-  );
+  return <MaskIcon src="/devto-ar21.svg" label="dev.to" className="h-6 w-12" />;
 }
 
 function GitHubIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
-    </svg>
-  );
+  return <MaskIcon src="/github.svg" label="GitHub" />;
 }
+
