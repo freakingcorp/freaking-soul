@@ -105,6 +105,50 @@ const PROPOSAL_26: FormState = {
     "This proposal follows positive feedback from community members after the successful completion of the initial FINPR campaign.",
 };
 
+const PROPOSAL_20: FormState = {
+  title: "Marketing Press Only: FINPR Agency",
+  submittedBy: "Rainbowmagician",
+  usdt: "2,890 USDT, vendor payment to FINPR",
+  rbnt: "50,000 RBNT, Rainbowmagician, coordination and research",
+  budgetJustification:
+    "Covers FINPR press release drafting, editorial placement, and publication links plus final report, and Rainbowmagician's research, framing, coordination, quality control, and final delivery to the DAO.",
+  paymentStructure: "Upfront",
+  upfrontJustification:
+    "70 percent of the USDT budget is released upfront to FINPR to secure the press release booking, with the remaining 30 percent held until publication and reporting are confirmed. RBNT compensation is fully post-delivery.",
+  milestones: [
+    "FINPR press release drafted and submitted for review",
+    "Publication secured in recognized crypto media",
+    "Final publication links and coordination report delivered to DAO",
+  ],
+  pod: "Marketing",
+  alignment:
+    "Supports the Marketing pod objective of building durable, credible external references through recognized crypto media, improving visibility, discoverability, and reusable communication assets for onboarding and ecosystem discussions.",
+  timeline:
+    "Single-cycle delivery estimated at two to three weeks, with no dependency on Redbelly events, campaign schedules, or overlap with other DAO efforts.",
+  resourcing:
+    "FINPR handles press release drafting and editorial placement as external vendor. Rainbowmagician handles narrative framing, press option evaluation, FINPR coordination, quality control, and final report delivery to the DAO.",
+  reviewer: "Any pod leader or High Council, not a named individual",
+  monthlyUpdate: "",
+  kpis: "Publication completed yes or no, number of media placements, and links archived and shared publicly.",
+  longTermValue:
+    "Reusable editorial references, durable external credibility, and improved discoverability for the DAO.",
+  risks: [
+    { a: "Limited immediate reach", b: "Editorial content is durable and reusable over time" },
+    { a: "No viral effect", b: "Low budget exposure, one-time expense, no follow-up commitment without a new vote" },
+  ],
+  coFunding: "No co-funding required. No hidden dependencies. No exclusivity or lock-in.",
+  contributors: [
+    { a: "Rainbowmagician", b: "50,000 RBNT for coordination, research, and delivery oversight" },
+  ],
+  otherPaidRole: "No",
+  otherPaidRoleJustification: "",
+  disclosure:
+    "Vendor and contributor roles clearly separated. No RBNT used for speculation. Fully compliant with DAO conduct standards as stated in the proposal.",
+  cocAcknowledged: true,
+  communityEvidence:
+    "Proposal discussed publicly prior to submission. Deliverables shared openly with the community. Outputs reusable by all DAO members.",
+};
+
 type Result = { number: string; status: "PASS" | "FLAG"; reason?: string | undefined; note?: string | undefined };
 
 const blank = (s: string) => s.trim().length === 0;
@@ -244,15 +288,16 @@ export default function PreScreening() {
         >
           Load Proposal #26 (rejected)
         </button>
-        <div>
-          <button type="button" className={ghostBtn} disabled>
-            Load Proposal #20 (passed)
-          </button>
-          <p className="mt-2 max-w-[40ch] text-xs text-muted-foreground">
-            Proposal #20's full text has not been captured yet. This button is wired but empty
-            until it is.
-          </p>
-        </div>
+        <button
+          type="button"
+          className={ghostBtn}
+          onClick={() => {
+            setF(PROPOSAL_20);
+            setResults(null);
+          }}
+        >
+          Load Proposal #20 (passed)
+        </button>
       </div>
 
       <form
