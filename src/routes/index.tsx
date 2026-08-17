@@ -240,13 +240,15 @@ function Index() {
               >
                 Read Full Docs
               </a>
-              <span
-                aria-disabled="true"
-                role="button"
-                className="inline-flex cursor-not-allowed items-center justify-center rounded-sm border border-border bg-transparent px-5 py-2.5 text-sm font-bold text-muted-foreground"
+              <a
+                href="https://dev.to/hildecorp/from-ratified-checklist-to-working-tool-redbelly-daos-proposal-pre-screening-framework-3im4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-sm border border-border bg-transparent px-5 py-2.5 text-sm font-bold text-foreground transition-colors hover:border-[var(--accent-text)] hover:text-[var(--accent-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 Read Full Article
-              </span>
+              </a>
+
             </div>
           </section>
 
