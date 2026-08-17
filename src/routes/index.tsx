@@ -261,6 +261,9 @@ function Index() {
               title="TASK-25 Proposal Evaluation Rubric PDF"
             />
           </section>
+
+          {/* Section 05 */}
+          <PreScreening />
         </div>
       </main>
 
