@@ -338,6 +338,26 @@ function Index() {
               ))}
             </div>
           </section>
+
+          {/* Section 04 */}
+          <section className="mt-16 md:mt-20">
+            <p className="mb-2 text-sm font-bold uppercase tracking-wide text-muted-foreground">
+              Section 04
+            </p>
+            <h2 className="mb-2 text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+              Full Report
+            </h2>
+            <p className="mb-6 text-sm text-muted-foreground">
+              The complete rubric document, embedded below.
+            </p>
+            <iframe
+              src={PDF_URL}
+              width="100%"
+              height="800px"
+              style={{ border: "1px solid #3a4650", borderRadius: "8px" }}
+              title="TASK-25 Proposal Evaluation Rubric PDF"
+            />
+          </section>
         </div>
       </main>
 
