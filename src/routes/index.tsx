@@ -264,6 +264,74 @@ function Index() {
 
           {/* Section 05 */}
           <PreScreening />
+
+          {/* Section 06 */}
+          <section className="mt-16 md:mt-20">
+            <p className="mb-2 text-sm font-bold uppercase tracking-wide text-muted-foreground">
+              Section 06
+            </p>
+            <h2 className="mb-6 text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+              Documentation
+            </h2>
+            <div className="space-y-6">
+              <div className="rounded-lg border border-border bg-card p-6 md:p-8">
+                <h3 className="mb-3 text-base font-semibold text-foreground">
+                  How Pre-Screening Works
+                </h3>
+                <div className="max-w-[75ch] space-y-4 text-base text-foreground-secondary">
+                  <p>
+                    Pre-screening checks a submitted proposal against the DAO's 11 ratified criteria
+                    and returns a pass or flag for each one, citing the specific Constitution or Code
+                    of Conduct section behind it. It runs entirely client-side in this page,
+                    nothing is stored or sent anywhere. It is not a decision. It runs before Guild and
+                    High Council review, not instead of it. A flag means a reviewer should look
+                    closer, not that a proposal is rejected. Criteria 08 and 11 are informational
+                    only and never contribute to a fail state, because the ratified checklist gives
+                    them no flag condition.
+                  </p>
+                </div>
+              </div>
+              <div className="rounded-lg border border-border bg-card p-6 md:p-8">
+                <h3 className="mb-3 text-base font-semibold text-foreground">
+                  Updating the Mapping When the Constitution Is Amended
+                </h3>
+                <div className="max-w-[75ch] space-y-4 text-base text-foreground-secondary">
+                  <p>
+                    When Constitution v1.2 is re-ratified or superseded, check the 11 criteria
+                    against the new text in this order: Section 6.2 (Budget Alignment), Section 7
+                    (Payment and Payout), Section 3 (Strategic Fit), Section 6.1 (Oversight and
+                    Accountability), Section 5 (Contribution Equity), Section 8 (Community
+                    Involvement), and the standalone Code of Conduct v1.0 (Compliance and Ethical
+                    Standards). The four criteria with no Constitution anchor, Feasibility and
+                    Timeline, Impact and Measurement, Risk and Mitigation, and Co-Funding and
+                    Leverage, stay unanchored unless a new provision explicitly covers them. Update
+                    both the rubric document and the citation links in Section 03 and Section 05 to
+                    point at the new section numbers. If a later Snapshot proposal supersedes a
+                    section without a full re-ratification, follow the pattern already used in
+                    Section 02, Known Discrepancies: keep citing the Constitution section but add a
+                    note naming the superseding proposal as controlling.
+                  </p>
+                </div>
+              </div>
+              <div className="rounded-lg border border-border bg-card p-6 md:p-8">
+                <h3 className="mb-3 text-base font-semibold text-foreground">
+                  Day-to-Day Operation for Council Members
+                </h3>
+                <div className="max-w-[75ch] space-y-4 text-base text-foreground-secondary">
+                  <p>
+                    No technical background required. To pre-screen a submitted proposal, open this
+                    page, scroll to Section 05, and either fill in the 11 groups by hand from the
+                    submission or use the Load Proposal buttons to see a worked example first.
+                    Click Run Pre-Screening. Read the summary line for how many of 11 passed, then
+                    read each flagged row for its one-line reason and its cited Constitution or Code
+                    of Conduct section. A flag is a prompt to look closer during review, not an
+                    automatic rejection. Criteria marked Informational never block a proposal on their
+                    own. The final accept or reject decision stays with the council.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </main>
 
