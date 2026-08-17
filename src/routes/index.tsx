@@ -287,7 +287,7 @@ function Index() {
               {DISCREPANCIES.map((d) => (
                 <div
                   key={d.label}
-                  className="rounded-lg border border-[var(--primary)] bg-card p-5 md:p-6"
+                  className="rounded-lg border border-border bg-card p-5 md:p-6"
                 >
                   <p className="mb-2 text-sm font-bold uppercase tracking-wide text-[var(--primary)]">
                     {d.label}
