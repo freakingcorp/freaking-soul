@@ -44,6 +44,86 @@ const CODE_OF_CONDUCT_URL =
 
 const GITHUB_URL = "https://github.com/hildecorp/redbellydaotask25";
 
+const DISCREPANCIES: { label: string; body: string }[] = [
+  {
+    label: "Three working groups vs. five pods",
+    body: "The ratified checklist text names three working groups: Community, Marketing, Developers/Builders. Constitution Section 3 ratifies five pods, adding Researcher and Partnerships. This framework follows the Constitution as the current, in-force structure. A Researcher or Partnerships submission is not flagged for its pod choice.",
+  },
+  {
+    label: "Criterion 11 has no ratified flag condition",
+    body: "Every other criterion in the ratified checklist pairs a pass condition with an explicit flag rule. Community Involvement does not. Any flag raised here is labelled informational only and never marks a proposal as failing pre-screening on its own.",
+  },
+];
+
+const CRITERIA: { number: string; name: string; anchor: string; flag: string }[] = [
+  {
+    number: "01",
+    name: "Budget Alignment & Limits",
+    anchor: "Section 6.2",
+    flag: "Flags if the USDT or RBNT field is empty while the proposal clearly needs funding, or the justification is under roughly 20 words.",
+  },
+  {
+    number: "02",
+    name: "Payment & Payout Structure",
+    anchor: "Section 7",
+    flag: "Flags if Upfront is selected with no justification, or the milestone list is empty.",
+  },
+  {
+    number: "03",
+    name: "Strategic Fit",
+    anchor: "Section 3",
+    flag: "Flags if the alignment text is empty or under roughly 15 words. Never flags based on which of the five pods is chosen.",
+  },
+  {
+    number: "04",
+    name: "Feasibility & Timeline",
+    anchor: "No Constitution anchor",
+    flag: "Flags if the timeline is empty or the resourcing note is empty.",
+  },
+  {
+    number: "05",
+    name: "Oversight & Accountability",
+    anchor: "Section 6.1",
+    flag: "Flags if the reviewer field or the monthly update plan is empty.",
+  },
+  {
+    number: "06",
+    name: "Impact & Measurement",
+    anchor: "No Constitution anchor",
+    flag: "Flags if KPIs are empty, or only short-term value is described with nothing under long-term or community value.",
+  },
+  {
+    number: "07",
+    name: "Risk & Mitigation",
+    anchor: "No Constitution anchor",
+    flag: "Flags if the risk list is empty or any risk has no paired mitigation.",
+  },
+  {
+    number: "08",
+    name: "Co-Funding & Leverage",
+    anchor: "No Constitution anchor",
+    flag: "Flags, informationally and non-blocking, if left empty.",
+  },
+  {
+    number: "09",
+    name: "Contribution Equity",
+    anchor: "Section 5",
+    flag: "Flags if one contributor's share of payout is disproportionate, or a listed contributor already holds another paid DAO role with no justification given.",
+  },
+  {
+    number: "10",
+    name: "Compliance & Ethical Standards",
+    anchor: "Code of Conduct v1.0",
+    flag: "Flags if the disclosure field is empty or the Code of Conduct acknowledgement is unchecked.",
+  },
+  {
+    number: "11",
+    name: "Community Involvement",
+    anchor: "Section 8",
+    flag: "Flags only if the evidence field is completely empty. The ratified checklist gives this criterion no flag condition at all, so this flag is always informational, never a failure.",
+  },
+];
+
 function Index() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
