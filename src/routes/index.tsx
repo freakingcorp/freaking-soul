@@ -208,80 +208,39 @@ function Index() {
   );
 }
 
-function PdfIcon() {
+function MaskIcon({ src, label }: { src: string; label: string }) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-      <polyline points="14 2 14 8 20 8" />
-      <path d="M10 13v-2h2" />
-      <path d="M10 17.5V15h1.5a1.5 1.5 0 0 1 0 3H10" />
-      <path d="M14 15h1.5a1.5 1.5 0 0 1 0 3H14v-3" />
-    </svg>
+    <span
+      role="img"
+      aria-label={label}
+      className="inline-block h-6 w-6 bg-current"
+      style={{
+        maskImage: `url(${src})`,
+        WebkitMaskImage: `url(${src})`,
+        maskRepeat: "no-repeat",
+        WebkitMaskRepeat: "no-repeat",
+        maskPosition: "center",
+        WebkitMaskPosition: "center",
+        maskSize: "contain",
+        WebkitMaskSize: "contain",
+      }}
+    />
   );
+}
+
+function PdfIcon() {
+  return <MaskIcon src="/filetype-pdf.svg" label="PDF" />;
 }
 
 function DocsIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-      <polyline points="14 2 14 8 20 8" />
-      <line x1="16" y1="13" x2="8" y2="13" />
-      <line x1="16" y1="17" x2="8" y2="17" />
-      <line x1="10" y1="9" x2="8" y2="9" />
-    </svg>
-  );
+  return <MaskIcon src="/docs-svgrepo-com.svg" label="Docs" />;
 }
 
 function DevToIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      <path d="M7.42 10.05c-.77-.02-1.13.4-1.13.89v3.86c0 .5.36.93 1.13.91.78-.02 1.13-.42 1.13-.91v-3.86c0-.49-.35-.91-1.13-.89z" />
-      <path d="M19.15 10.4c-.4-.15-.8-.05-1.05.25l-.1.13v4.45l.1.13c.25.3.65.4 1.05.25.42-.15.65-.5.65-.9v-2.41c0-.4-.23-.75-.65-.9z" />
-      <path d="M22 7.42v9.16c0 1.55-1.25 2.8-2.8 2.8H4.8C3.25 19.38 2 18.13 2 16.58V7.42c0-1.55 1.25-2.8 2.8-2.8h14.4c1.55 0 2.8 1.25 2.8 2.8zM4.8 5.62C3.26 5.62 2 6.88 2 8.42v7.16c0 1.54 1.26 2.8 2.8 2.8h14.4c1.54 0 2.8-1.26 2.8-2.8V8.42c0-1.54-1.26-2.8-2.8-2.8H4.8zm2.62 9.18c0 .9-.67 1.63-1.87 1.65H3.9a.4.4 0 0 1-.4-.4V8.95c0-.22.18-.4.4-.4h1.65c1.2.02 1.87.75 1.87 1.65v4.6zm6.13.4c0 .22-.18.4-.4.4h-1.68a.4.4 0 0 1-.4-.4V8.95c0-.22.18-.4.4-.4h1.68c.22 0 .4.18.4.4v6.65zm4.42-4.86c0 .22-.18.4-.4.4h-.95v1.47h.95c.22 0 .4.18.4.4v.74c0 .22-.18.4-.4.4h-.95v1.64h.95c.22 0 .4.18.4.4v.74c0 .22-.18.4-.4.4h-1.75a.4.4 0 0 1-.4-.4V8.95c0-.22.18-.4.4-.4h1.75c.22 0 .4.18.4.4v1.59z" />
-    </svg>
-  );
+  return <MaskIcon src="/devto-ar21.svg" label="dev.to" />;
 }
 
 function GitHubIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
-    </svg>
-  );
+  return <MaskIcon src="/github.svg" label="GitHub" />;
 }
+
