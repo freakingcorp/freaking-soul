@@ -1,4 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
+import PreScreening from "@/components/PreScreening";
+import {
+  PDF_URL,
+  DOCS_URL,
+  SNAPSHOT_URL,
+  CONSTITUTION_URL,
+  CODE_OF_CONDUCT_URL,
+  GITHUB_URL,
+  DISCREPANCIES,
+  CRITERIA,
+} from "@/lib/criteria";
 
 export const Route = createFileRoute("/")({
   component: Index,
