@@ -383,14 +383,15 @@ function Index() {
             >
               <DocsIcon />
             </a>
-            <span
-              aria-disabled="true"
-              role="button"
-              aria-label="Read full article - coming soon"
-              className="cursor-not-allowed text-muted-foreground"
+            <a
+              href="https://dev.to/hildecorp/from-ratified-checklist-to-working-tool-redbelly-daos-proposal-pre-screening-framework-3im4"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Read full article on dev.to"
+              className="text-muted-foreground transition-colors hover:text-[var(--accent-text)]"
             >
               <DevToIcon />
-            </span>
+            </a>
             <a
               href={GITHUB_URL}
               target="_blank"
