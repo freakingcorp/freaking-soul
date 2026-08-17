@@ -156,6 +156,93 @@ function Index() {
               </span>
             </div>
           </section>
+
+          {/* Section 01 */}
+          <section className="mt-16 md:mt-20">
+            <div className="rounded-lg border border-border bg-card p-6 md:p-8">
+              <p className="mb-2 text-sm font-bold uppercase tracking-wide text-muted-foreground">
+                Section 01
+              </p>
+              <h2 className="mb-5 text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+                How Pre-Screening Works
+              </h2>
+              <div className="max-w-[75ch] space-y-4 text-base text-foreground-secondary">
+                <p>
+                  This framework automates the DAO's already-ratified 11-criterion Proposal Review
+                  Checklist (Snapshot proposal #7, adopted 6 October 2025). A proposal is checked
+                  against all 11 criteria. Each one returns pass or flag, with the specific reason
+                  and the Constitution or Code of Conduct section it cites.
+                </p>
+                <p>
+                  Pre-screening is not a decision. It runs before Guild and High Council review, not
+                  instead of it. A flagged criterion means a reviewer should look closer, not that
+                  the proposal is rejected.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 02 */}
+          <section className="mt-16 md:mt-20">
+            <p className="mb-2 text-sm font-bold uppercase tracking-wide text-muted-foreground">
+              Section 02
+            </p>
+            <h2 className="mb-6 text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+              Known Discrepancies
+            </h2>
+            <div className="space-y-4">
+              {DISCREPANCIES.map((d) => (
+                <div
+                  key={d.label}
+                  className="rounded-lg border border-[var(--primary)] bg-card p-5 md:p-6"
+                >
+                  <p className="mb-2 text-sm font-bold uppercase tracking-wide text-[var(--primary)]">
+                    {d.label}
+                  </p>
+                  <p className="max-w-[75ch] text-base text-foreground">{d.body}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Section 03 */}
+          <section className="mt-16 md:mt-20">
+            <p className="mb-2 text-sm font-bold uppercase tracking-wide text-muted-foreground">
+              Section 03
+            </p>
+            <h2 className="mb-2 text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+              The 11 Criteria
+            </h2>
+            <p className="mb-6 text-sm text-muted-foreground">
+              Showing all 11. Each card is what the pre-screening tool checks and cites.
+            </p>
+            <div className="space-y-4">
+              {CRITERIA.map((c) => (
+                <article
+                  key={c.number}
+                  className="rounded-lg border border-border bg-card"
+                >
+                  <div className="flex flex-col gap-2 border-b border-[#27323a] p-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                    <div className="flex items-baseline gap-3">
+                      <span className="font-mono text-sm text-muted-foreground">{c.number}</span>
+                      <h3 className="text-base font-semibold text-foreground">{c.name}</h3>
+                    </div>
+                    <span
+                      className={
+                        "font-mono text-xs " +
+                        (c.anchor === "No Constitution anchor"
+                          ? "text-muted-foreground"
+                          : "text-[var(--accent-text)]")
+                      }
+                    >
+                      {c.anchor}
+                    </span>
+                  </div>
+                  <p className="max-w-[75ch] p-5 text-base text-foreground-secondary">{c.flag}</p>
+                </article>
+              ))}
+            </div>
+          </section>
         </div>
       </main>
 
