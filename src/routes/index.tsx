@@ -335,7 +335,7 @@ function Index() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Read full PDF report"
-              className="text-muted-foreground transition-colors hover:text-accent"
+              className="text-muted-foreground transition-colors hover:text-[var(--accent-text)]"
             >
               <PdfIcon />
             </a>
@@ -344,7 +344,7 @@ function Index() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Read full docs"
-              className="text-muted-foreground transition-colors hover:text-accent"
+              className="text-muted-foreground transition-colors hover:text-[var(--accent-text)]"
             >
               <DocsIcon />
             </a>
@@ -361,7 +361,7 @@ function Index() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="View source on GitHub"
-              className="text-muted-foreground transition-colors hover:text-accent"
+              className="text-muted-foreground transition-colors hover:text-[var(--accent-text)]"
             >
               <GitHubIcon />
             </a>
