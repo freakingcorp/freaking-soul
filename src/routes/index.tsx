@@ -320,16 +320,18 @@ function Index() {
                       <span className="font-mono text-sm text-muted-foreground">{c.number}</span>
                       <h3 className="text-base font-semibold text-foreground">{c.name}</h3>
                     </div>
-                    <span
-                      className={
-                        "font-mono text-xs " +
-                        (c.anchor === "No Constitution anchor"
-                          ? "text-muted-foreground"
-                          : "text-[var(--accent-text)]")
-                      }
-                    >
-                      {c.anchor}
-                    </span>
+                    {c.link ? (
+                      <a
+                        href={c.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-mono text-xs text-[var(--accent-text)] underline-offset-2 hover:underline"
+                      >
+                        {c.anchor}
+                      </a>
+                    ) : (
+                      <span className="font-mono text-xs text-muted-foreground">{c.anchor}</span>
+                    )}
                   </div>
                   <p className="max-w-[75ch] p-5 text-base text-foreground-secondary">{c.flag}</p>
                 </article>
