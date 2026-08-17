@@ -55,24 +55,33 @@ const DISCREPANCIES: { label: string; body: string }[] = [
   },
 ];
 
-const CRITERIA: { number: string; name: string; anchor: string; flag: string }[] = [
+const CRITERIA: {
+  number: string;
+  name: string;
+  anchor: string;
+  flag: string;
+  link?: string;
+}[] = [
   {
     number: "01",
     name: "Budget Alignment & Limits",
     anchor: "Section 6.2",
     flag: "Flags if the USDT or RBNT field is empty while the proposal clearly needs funding, or the justification is under roughly 20 words.",
+    link: `${CONSTITUTION_URL}#page=10`,
   },
   {
     number: "02",
     name: "Payment & Payout Structure",
     anchor: "Section 7",
     flag: "Flags if Upfront is selected with no justification, or the milestone list is empty.",
+    link: `${CONSTITUTION_URL}#page=11`,
   },
   {
     number: "03",
     name: "Strategic Fit",
     anchor: "Section 3",
     flag: "Flags if the alignment text is empty or under roughly 15 words. Never flags based on which of the five pods is chosen.",
+    link: `${CONSTITUTION_URL}#page=7`,
   },
   {
     number: "04",
@@ -85,6 +94,7 @@ const CRITERIA: { number: string; name: string; anchor: string; flag: string }[]
     name: "Oversight & Accountability",
     anchor: "Section 6.1",
     flag: "Flags if the reviewer field or the monthly update plan is empty.",
+    link: `${CONSTITUTION_URL}#page=10`,
   },
   {
     number: "06",
@@ -109,18 +119,21 @@ const CRITERIA: { number: string; name: string; anchor: string; flag: string }[]
     name: "Contribution Equity",
     anchor: "Section 5",
     flag: "Flags if one contributor's share of payout is disproportionate, or a listed contributor already holds another paid DAO role with no justification given.",
+    link: `${CONSTITUTION_URL}#page=9`,
   },
   {
     number: "10",
     name: "Compliance & Ethical Standards",
     anchor: "Code of Conduct v1.0",
     flag: "Flags if the disclosure field is empty or the Code of Conduct acknowledgement is unchecked.",
+    link: CODE_OF_CONDUCT_URL,
   },
   {
     number: "11",
     name: "Community Involvement",
     anchor: "Section 8",
     flag: "Flags only if the evidence field is completely empty. The ratified checklist gives this criterion no flag condition at all, so this flag is always informational, never a failure.",
+    link: `${CONSTITUTION_URL}#page=12`,
   },
 ];
 
