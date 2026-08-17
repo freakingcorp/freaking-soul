@@ -31,7 +31,7 @@ const PDF_URL =
   "https://cdn.jsdelivr.net/gh/hildecorp/redbellydaotask25@main/website/TASK-25-Proposal-Evaluation-Rubric.pdf";
 
 const DOCS_URL =
-  "https://docs.google.com/viewer?url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fhildecorp%2Fredbellydaotask25%40main%2Fwebsite%2FTASK-25-Proposal-Evaluation-Rubric.docx&embedded=true";
+  "https://docs.google.com/viewer?url=https://raw.githubusercontent.com/hildecorp/redbellydaotask25/main/website/TASK-25-Proposal-Evaluation-Rubric.docx&embedded=true";
 
 const SNAPSHOT_URL =
   "https://snapshot.box/#/s:rbnt.eth/proposal/0xf2a05384e37a710c1600db1abbac9b4dc66444a56a1ed49df7f0e3dbfd7570e7";
