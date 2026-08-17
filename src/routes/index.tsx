@@ -55,24 +55,33 @@ const DISCREPANCIES: { label: string; body: string }[] = [
   },
 ];
 
-const CRITERIA: { number: string; name: string; anchor: string; flag: string }[] = [
+const CRITERIA: {
+  number: string;
+  name: string;
+  anchor: string;
+  flag: string;
+  link?: string;
+}[] = [
   {
     number: "01",
     name: "Budget Alignment & Limits",
     anchor: "Section 6.2",
     flag: "Flags if the USDT or RBNT field is empty while the proposal clearly needs funding, or the justification is under roughly 20 words.",
+    link: `${CONSTITUTION_URL}#page=10`,
   },
   {
     number: "02",
     name: "Payment & Payout Structure",
     anchor: "Section 7",
     flag: "Flags if Upfront is selected with no justification, or the milestone list is empty.",
+    link: `${CONSTITUTION_URL}#page=11`,
   },
   {
     number: "03",
     name: "Strategic Fit",
     anchor: "Section 3",
     flag: "Flags if the alignment text is empty or under roughly 15 words. Never flags based on which of the five pods is chosen.",
+    link: `${CONSTITUTION_URL}#page=7`,
   },
   {
     number: "04",
@@ -85,6 +94,7 @@ const CRITERIA: { number: string; name: string; anchor: string; flag: string }[]
     name: "Oversight & Accountability",
     anchor: "Section 6.1",
     flag: "Flags if the reviewer field or the monthly update plan is empty.",
+    link: `${CONSTITUTION_URL}#page=10`,
   },
   {
     number: "06",
@@ -109,18 +119,21 @@ const CRITERIA: { number: string; name: string; anchor: string; flag: string }[]
     name: "Contribution Equity",
     anchor: "Section 5",
     flag: "Flags if one contributor's share of payout is disproportionate, or a listed contributor already holds another paid DAO role with no justification given.",
+    link: `${CONSTITUTION_URL}#page=9`,
   },
   {
     number: "10",
     name: "Compliance & Ethical Standards",
     anchor: "Code of Conduct v1.0",
     flag: "Flags if the disclosure field is empty or the Code of Conduct acknowledgement is unchecked.",
+    link: CODE_OF_CONDUCT_URL,
   },
   {
     number: "11",
     name: "Community Involvement",
     anchor: "Section 8",
     flag: "Flags only if the evidence field is completely empty. The ratified checklist gives this criterion no flag condition at all, so this flag is always informational, never a failure.",
+    link: `${CONSTITUTION_URL}#page=12`,
   },
 ];
 
@@ -274,7 +287,7 @@ function Index() {
               {DISCREPANCIES.map((d) => (
                 <div
                   key={d.label}
-                  className="rounded-lg border border-[var(--primary)] bg-card p-5 md:p-6"
+                  className="rounded-lg border border-border bg-card p-5 md:p-6"
                 >
                   <p className="mb-2 text-sm font-bold uppercase tracking-wide text-[var(--primary)]">
                     {d.label}
@@ -307,21 +320,43 @@ function Index() {
                       <span className="font-mono text-sm text-muted-foreground">{c.number}</span>
                       <h3 className="text-base font-semibold text-foreground">{c.name}</h3>
                     </div>
-                    <span
-                      className={
-                        "font-mono text-xs " +
-                        (c.anchor === "No Constitution anchor"
-                          ? "text-muted-foreground"
-                          : "text-[var(--accent-text)]")
-                      }
-                    >
-                      {c.anchor}
-                    </span>
+                    {c.link ? (
+                      <a
+                        href={c.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-mono text-xs text-[var(--accent-text)] underline-offset-2 hover:underline"
+                      >
+                        {c.anchor}
+                      </a>
+                    ) : (
+                      <span className="font-mono text-xs text-muted-foreground">{c.anchor}</span>
+                    )}
                   </div>
                   <p className="max-w-[75ch] p-5 text-base text-foreground-secondary">{c.flag}</p>
                 </article>
               ))}
             </div>
+          </section>
+
+          {/* Section 04 */}
+          <section className="mt-16 md:mt-20">
+            <p className="mb-2 text-sm font-bold uppercase tracking-wide text-muted-foreground">
+              Section 04
+            </p>
+            <h2 className="mb-2 text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+              Full Report
+            </h2>
+            <p className="mb-6 text-sm text-muted-foreground">
+              The complete rubric document, embedded below.
+            </p>
+            <iframe
+              src={PDF_URL}
+              width="100%"
+              height="800px"
+              style={{ border: "1px solid #3a4650", borderRadius: "8px" }}
+              title="TASK-25 Proposal Evaluation Rubric PDF"
+            />
           </section>
         </div>
       </main>
