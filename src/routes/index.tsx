@@ -375,12 +375,12 @@ function Index() {
   );
 }
 
-function MaskIcon({ src, label }: { src: string; label: string }) {
+function MaskIcon({ src, label, className = "h-6 w-6" }: { src: string; label: string; className?: string }) {
   return (
     <span
       role="img"
       aria-label={label}
-      className="inline-block h-6 w-6 bg-current"
+      className={`inline-block bg-current ${className}`}
       style={{
         maskImage: `url(${src})`,
         WebkitMaskImage: `url(${src})`,
@@ -404,7 +404,7 @@ function DocsIcon() {
 }
 
 function DevToIcon() {
-  return <MaskIcon src="/devto-ar21.svg" label="dev.to" />;
+  return <MaskIcon src="/devto-ar21.svg" label="dev.to" className="h-6 w-12" />;
 }
 
 function GitHubIcon() {
