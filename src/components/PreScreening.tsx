@@ -105,7 +105,7 @@ const PROPOSAL_26: FormState = {
     "This proposal follows positive feedback from community members after the successful completion of the initial FINPR campaign.",
 };
 
-type Result = { number: string; status: "PASS" | "FLAG"; reason?: string; note?: string };
+type Result = { number: string; status: "PASS" | "FLAG"; reason?: string | undefined; note?: string | undefined };
 
 const blank = (s: string) => s.trim().length === 0;
 const words = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
